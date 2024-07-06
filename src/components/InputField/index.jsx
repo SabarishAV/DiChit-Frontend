@@ -13,7 +13,7 @@ const InputField = (props) => {
       <HelperText />
     </>
   );
-}
+};
 
 const StyledInput = styled(Input)(
   ({ theme }) => `
@@ -41,7 +41,7 @@ const StyledInput = styled(Input)(
       box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? colors.blue[600] : colors.blue[200]};
     }
   }
-`,
+`
 );
 
 const Label = styled(({ children, className }) => {
