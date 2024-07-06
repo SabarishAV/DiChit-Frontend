@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormControl, useFormControlContext } from '@mui/base/FormControl';
+import { useFormControlContext } from '@mui/base/FormControl';
 import { Input, inputClasses } from '@mui/base/Input';
 import { styled } from '@mui/system';
 import clsx from 'clsx';

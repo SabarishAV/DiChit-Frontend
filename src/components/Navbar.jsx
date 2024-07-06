@@ -1,3 +1,5 @@
+import React from "react";
+
 function Navbar() {
     return <>
         <nav className="w-full color bg-zinc-400">

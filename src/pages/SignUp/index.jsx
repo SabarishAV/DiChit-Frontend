@@ -1,3 +1,4 @@
+import React from "react";
 import "../../assets/index.css"
 import CustomButton from "../../components/Button";
 import TextField from "../../components/InputField";
@@ -8,7 +9,7 @@ const SignUp = () => {
             <div className="w-full min-h-screen flex items-start justify-center flex-col">
                 <p>Create New Account</p>
                 <p className="text-4xl">Lets log you in</p>
-                <p>Already have an account? <span> Sign in</span></p>
+                <p>Already have an account? <span><a href="/signin">Sign In</a></span></p>
                 <TextField name='Phone Number' />
                 <TextField name='Password' />
                 <CustomButton name='Sign Up' />

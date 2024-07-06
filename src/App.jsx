@@ -6,11 +6,11 @@ import SignUp from './pages/SignUp';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<SignIn/>} />
+      <Route path="/signin" element={<SignIn />} />
 
-      <Route path="/signup" component={<SignUp/>} />
+      <Route path="/signup" element={<SignUp />} />
 
-      <Route component={NotFound} />
+      {/* <Route component={NotFound} /> */}
     </Routes>
   )
 }
