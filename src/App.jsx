@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import UserHome from './pages/UserHome';
@@ -14,7 +14,7 @@ function App() {
       <Route path="/home" element={<UserHome />} />
 
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

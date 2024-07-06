@@ -1,10 +1,10 @@
 import React from "react";
-import ResponsiveDrawer from "../../components/ResponsiveDrawer";
+import TemporaryDrawer from "../../components/SideBar";
 
 const UserHome = () => {
     return (
-        <div className="w-screen flex items-center justify-center p-5">
-            <ResponsiveDrawer />
+        <div className="w-screen flex items-center justify-center">
+            <TemporaryDrawer />
         </div>
     );
 }
