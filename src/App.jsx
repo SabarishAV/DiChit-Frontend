@@ -4,11 +4,14 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import UserHome from './pages/UserHome';
 import UserForm from './components/UserForm';
+import ChitBox from './components/ChitBox';
 
 function App() {
   return (
     <Routes>
       <Route path="/signin" element={<SignIn />} />
+
+      <Route path='/test' element={<ChitBox/>}/>
 
       <Route path="/signup" element={<SignUp />} />
 
