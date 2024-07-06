@@ -21,7 +21,6 @@ const grey = {
 };
 
 const green = {
-    10: '#25F321'
-}
-;
-export default { blue, grey, green }
+  10: '#25F321',
+};
+export default { blue, grey, green };

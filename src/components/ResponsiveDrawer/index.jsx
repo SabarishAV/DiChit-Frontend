@@ -47,14 +47,21 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <Divider />
-      <div className='w-full flex items-center justify-center p-2'>
+      <div className="w-full flex items-center justify-center p-2">
         <CustomButton name="Add Chit" icon={<AddIcon />} />
       </div>
       <List>
         {['Join Chit', 'Quick Payments', 'Help and Support'].map((text) => (
           <ListItem key={text} disablePadding sx={{ paddingBlock: '1rem' }}>
             <ListItemButton>
-              <div style={{ display: 'flex', paddingInline: '1rem', alignItems: 'center', gap: '1rem' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  paddingInline: '1rem',
+                  alignItems: 'center',
+                  gap: '1rem',
+                }}
+              >
                 <AddCardIcon />
                 <ListItemText primary={text} />
               </div>
@@ -67,7 +74,8 @@ function ResponsiveDrawer(props) {
   );
 
   // Remove this const when copying and pasting into your project.
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -111,7 +119,10 @@ function ResponsiveDrawer(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
           }}
         >
           {drawer}
@@ -120,7 +131,10 @@ function ResponsiveDrawer(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
           }}
           open
         >
@@ -129,10 +143,13 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+        }}
       >
         <Toolbar />
-       
       </Box>
     </Box>
   );
