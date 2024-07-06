@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
@@ -12,7 +12,7 @@ function App() {
 
       {/* <Route component={NotFound} /> */}
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
