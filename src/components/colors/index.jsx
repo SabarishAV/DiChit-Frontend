@@ -20,4 +20,8 @@ const grey = {
     900: '#1C2025',
 };
 
-export default { blue, grey }
+const green = {
+    10: '#25F321'
+}
+;
+export default { blue, grey, green }
