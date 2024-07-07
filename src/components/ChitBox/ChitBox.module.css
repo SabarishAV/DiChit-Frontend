@@ -52,19 +52,46 @@
   font-weight: 500;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 850px) {
   .Box {
-    display: flex;
-    width: 100%;
-    padding: 1rem 0.3rem;
-    gap: 1rem;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 1rem;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+    gap: 2rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .subheading {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .Box {
+    flex-direction: column;
+    padding: 1rem 0.6rem;
   }
 
-  .userhome {
-    width: '80%';
+  .subtitle {
+    text-align: center;
   }
-} */
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+  }
+  .columnContainer {
+    gap: 0.6rem;
+  }
+  .heading {
+    font-size: 0.7rem;
+  }
+  .subheading {
+    font-size: 0.7rem;
+  }
+}

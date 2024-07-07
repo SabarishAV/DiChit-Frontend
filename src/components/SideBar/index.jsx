@@ -41,6 +41,9 @@ const closedMixin = (theme) => ({
   [theme.breakpoints.up("sm")]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
+  [theme.breakpoints.up("xs")]: {
+    width: '0',
+  },
 });
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -99,6 +102,95 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+  const drawer = (
+  <div>
+    <DrawerHeader>
+      <IconButton onClick={handleDrawerClose}>
+        {theme.direction === "rtl" ? (
+          <ChevronRightIcon />
+        ) : (
+          <ChevronLeftIcon />
+        )}
+      </IconButton>
+    </DrawerHeader>
+    <Divider />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        margin: 0,
+        paddingTop: 0,
+      }}
+    >
+      <div>
+        <List>
+          {[
+            "Chits",
+            "Join Chits",
+            "Payment Details",
+            "Quick Payment",
+            "Help & Support",
+          ].map((text, index) => (
+            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText
+                  primary={text}
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+      </div>
+      <ListItem
+        key={"Profile"}
+        disablePadding
+        sx={{ position: "absolute", bottom: 1, left: 1 }}
+      >
+        <ListItemButton
+          sx={{
+            minHeight: 48,
+            justifyContent: open ? "initial" : "center",
+            px: 2.5,
+            position: "absolute",
+            bottom: 1,
+            left: 1,
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              minWidth: 0,
+              mr: open ? 3 : "auto",
+              justifyContent: "center",
+            }}
+          >
+            <InboxIcon />
+          </ListItemIcon>
+          <ListItemText
+            primary={"Profile"}
+            sx={{ opacity: open ? 1 : 0 }}
+          />
+        </ListItemButton>
+      </ListItem>
+    </div>
+  </div>)
+
   return (
     <>
       <Box sx={{ display: "flex" }}>
@@ -124,92 +216,11 @@ export default function MiniDrawer() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open} className="">
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? (
-                <ChevronRightIcon />
-              ) : (
-                <ChevronLeftIcon />
-              )}
-            </IconButton>
-          </DrawerHeader>
-          <Divider />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              margin: 0,
-              paddingTop: 0,
-            }}
-          >
-            <div>
-              <List>
-                {[
-                  "Chits",
-                  "Join Chits",
-                  "Payment Details",
-                  "Quick Payment",
-                  "Help & Support",
-                ].map((text, index) => (
-                  <ListItem key={text} disablePadding sx={{ display: "block" }}>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: open ? "initial" : "center",
-                        px: 2.5,
-                      }}
-                    >
-                      <ListItemIcon
-                        sx={{
-                          minWidth: 0,
-                          mr: open ? 3 : "auto",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={text}
-                        sx={{ opacity: open ? 1 : 0 }}
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
-              <Divider />
-            </div>
-            <ListItem
-              key={"Profile"}
-              disablePadding
-              sx={{ position: "absolute", bottom: 1, left: 1 }}
-            >
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  position: "absolute",
-                  bottom: 1,
-                  left: 1,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary={"Profile"}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </div>
+        <Drawer variant="permanent" open={open}  sx={{
+            display: 'block',
+            '& .MuiDrawer-paper': { boxSizing: 'border-box'},
+          }}>
+          {drawer}
         </Drawer>
       </Box>
     </>
