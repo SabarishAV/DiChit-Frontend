@@ -1,18 +1,45 @@
 import React, { useState } from 'react';
 import '../../assets/index.css';
-import { Button, TextField } from '@mui/material';
+import {
+  Button,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import LogoImg from '../../assets/images/Logo.svg';
+import axios from 'axios';
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('subscriber');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(phoneNumber, password, role);
+
+    axios
+      .post(`${apiUrl}/auth/register`, {
+        phone_number: phoneNumber,
+        password: password,
+        role: role,
+        // email :"sample@gmail.com"
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     navigate('/home');
-    console.log(phoneNumber, password, { e });
   };
 
   return (
@@ -29,8 +56,8 @@ const SignUp = () => {
             alignItems: 'center',
           }}
         >
-          <img style={{ paddingBottom: '2rem' }} src={LogoImg} alt="DICHIT" />
-          <p className="text-4xl font-bold">{`Create New Account!`}</p>
+          <img style={{ paddingBottom: '1.5rem' }} src={LogoImg} alt="DICHIT" />
+          <p className="text-4xl font-bold">{`Create An Account!`}</p>
           <p className="pt-2">
             Already have an account?{' '}
             <span>
@@ -72,6 +99,36 @@ const SignUp = () => {
                     sx={{ mb: 1 }}
                   />
                 </div>
+                <FormGroup>
+                  <FormLabel id="demo-row-radio-buttons-group-label" required>
+                    Role
+                  </FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                  >
+                    <div style={{ dispaly: 'flex', flexDirection: 'row' }}>
+                      <FormControlLabel
+                        value="subscriber"
+                        control={<Radio />}
+                        label="Subscriber"
+                      />
+                      <FormControlLabel
+                        value="foreman"
+                        control={<Radio />}
+                        label="Foreman"
+                      />
+                      {/* <FormControlLabel
+                    value="admin"
+                    control={<Radio />}
+                    label="Admin"
+                  /> */}
+                    </div>
+                  </RadioGroup>
+                </FormGroup>
                 <div
                   style={{
                     width: '100%',
@@ -87,7 +144,7 @@ const SignUp = () => {
                       color: 'white',
                       borderRadius: '5rem',
                       width: '70%',
-                        textTransform: 'none'
+                      textTransform: 'none',
                     }}
                     type="submit"
                   >
