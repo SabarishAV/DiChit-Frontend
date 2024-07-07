@@ -2,7 +2,7 @@ import React from "react";
 import TemporaryDrawer from "../../components/SideBar";
 import { Button } from "@mui/material";
 import ChitBox from "../../components/ChitBox";
-import "../../components/ChitBox/Chitbox.css";
+// import "../../components/ChitBox/Chitbox.css";
 
 const UserHome = () => {
   return (

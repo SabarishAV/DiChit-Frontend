@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import UserHome from './pages/UserHome';
-import ChitDetail from './components/ChitDetail';
+// import ChitDetail from './components/ChitDetail';
+// import ChitBox from './components/ChitBox';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
 
       <Route path="/home" element={<UserHome />} />
-      <Route path="/home1" element={<ChitDetail />} />
+      {/* <Route path="/home1" element={<ChitBox />} /> */}
     </Routes>
   );
 }
