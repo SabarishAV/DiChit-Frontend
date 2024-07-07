@@ -87,10 +87,11 @@ const SignUp = () => {
                       color: 'white',
                       borderRadius: '5rem',
                       width: '70%',
+                        textTransform: 'none'
                     }}
                     type="submit"
                   >
-                    Sign In
+                    Sign Up
                   </Button>
                 </div>
               </div>

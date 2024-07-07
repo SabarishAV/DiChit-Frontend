@@ -2,11 +2,10 @@
 
 .Box {
   display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 3rem 1.7rem;
+  width: 100%;
+  padding: 3rem 1rem;
   gap: 4rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 1rem;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
@@ -36,19 +35,36 @@
 
 .title {
   font-family: "Poppins", sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .subtitle {
   font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: rgba(0, 0, 0, 0.6);
   line-height: 0.2rem;
 }
 
 .subheading {
   font-family: "Poppins", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 500;
 }
+
+/* @media (max-width: 768px) {
+  .Box {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0.3rem;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  }
+
+  .userhome {
+    width: '80%';
+  }
+} */

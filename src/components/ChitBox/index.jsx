@@ -3,7 +3,7 @@ import styles from "./ChitBox.module.css";
 
 const ChitBox = () => {
   return (
-    <>
+    <div style={{paddingBlock: '0.5rem'}}>
       <div className={styles.Box}>
         <div className={styles.titleContainer}>
             <div className={styles.title}>Mixedfruit scheme chit</div>
@@ -26,7 +26,7 @@ const ChitBox = () => {
             </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
